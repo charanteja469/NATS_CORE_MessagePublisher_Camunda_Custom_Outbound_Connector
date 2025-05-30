@@ -1,0 +1,168 @@
+{
+  "$schema": "https://unpkg.com/@camunda/zeebe-element-templates-json-schema/resources/schema.json",
+  "name": "NATS Connector",
+  "id": "ad92ff8b-eee4-4f9b-929f-db844e6620c7",
+  "version": 1748457800950,
+  "description": "Camunda 8 NATS Custom Connector",
+  "icon": {
+    "contents": "data:image/png;base64,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"
+  },
+  "appliesTo": [
+    "bpmn:Task"
+  ],
+  "elementType": {
+    "value": "bpmn:ServiceTask"
+  },
+  "category": {
+    "id": "connectors",
+    "name": "Connectors"
+  },
+  "groups": [
+    {
+      "id": "compose",
+      "label": "Compose"
+    },
+    {
+      "id": "output",
+      "label": "Output mapping"
+    },
+    {
+      "id": "error",
+      "label": "Error handling"
+    },
+    {
+      "id": "retries",
+      "label": "Retries"
+    }
+  ],
+  "properties": [
+    {
+      "value": "io.camunda:template:1",
+      "binding": {
+        "property": "type",
+        "type": "zeebe:taskDefinition"
+      },
+      "type": "Hidden"
+    },
+    {
+      "id": "subject",
+      "label": "Subject",
+      "optional": false,
+      "constraints": {
+        "notEmpty": true
+      },
+      "feel": "optional",
+      "group": "compose",
+      "binding": {
+        "name": "subject",
+        "type": "zeebe:input"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "message",
+      "label": "Message",
+      "optional": false,
+      "constraints": {
+        "notEmpty": true
+      },
+      "feel": "optional",
+      "group": "compose",
+      "binding": {
+        "name": "message",
+        "type": "zeebe:input"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "host",
+      "label": "Host",
+      "optional": false,
+      "constraints": {
+        "notEmpty": true
+      },
+      "feel": "optional",
+      "group": "compose",
+      "binding": {
+        "name": "host",
+        "type": "zeebe:input"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "port",
+      "label": "Port",
+      "optional": false,
+      "constraints": {
+        "notEmpty": true
+      },
+      "feel": "optional",
+      "group": "compose",
+      "binding": {
+        "name": "port",
+        "type": "zeebe:input"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "resultVariable",
+      "label": "Result variable",
+      "description": "Name of variable to store the response in",
+      "group": "output",
+      "binding": {
+        "key": "resultVariable",
+        "type": "zeebe:taskHeader"
+      },
+      "type": "String"
+    },
+    {
+      "id": "resultExpression",
+      "label": "Result expression",
+      "description": "Expression to map the response into process variables",
+      "feel": "required",
+      "group": "output",
+      "binding": {
+        "key": "resultExpression",
+        "type": "zeebe:taskHeader"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "errorExpression",
+      "label": "Error expression",
+      "description": "Expression to handle errors. Details in the <a href=\"https://docs.camunda.io/docs/components/connectors/use-connectors/\" target=\"_blank\">documentation</a>.",
+      "feel": "required",
+      "group": "error",
+      "binding": {
+        "key": "errorExpression",
+        "type": "zeebe:taskHeader"
+      },
+      "type": "Text"
+    },
+    {
+      "id": "retryCount",
+      "label": "Retries",
+      "description": "Number of retries",
+      "value": "3",
+      "feel": "optional",
+      "group": "retries",
+      "binding": {
+        "property": "retries",
+        "type": "zeebe:taskDefinition"
+      },
+      "type": "String"
+    },
+    {
+      "id": "retryBackoff",
+      "label": "Retry backoff",
+      "description": "ISO-8601 duration to wait between retries",
+      "value": "PT0S",
+      "group": "retries",
+      "binding": {
+        "key": "retryBackoff",
+        "type": "zeebe:taskHeader"
+      },
+      "type": "String"
+    }
+  ]
+}
